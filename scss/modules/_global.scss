@@ -1,0 +1,17 @@
+.list--style {    
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.link--style {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    color: rgb(44, 44, 44);
+    text-align: center;
+}

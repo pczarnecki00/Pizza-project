@@ -5,6 +5,11 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   line-height: 1.15;
   /* 1 */
@@ -341,6 +346,27 @@ template {
   display: none;
 }
 
+.list--style {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.link--style {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  color: #2c2c2c;
+  text-align: center;
+}
+
 html {
   font-family: "Montserrat", sans-serif;
 }
@@ -356,9 +382,10 @@ html {
   z-index: 111;
   position: relative;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
-.header__img {
+.header__background-img {
   width: 100%;
   height: auto;
   position: absolute;
@@ -368,7 +395,7 @@ html {
 }
 
 @media (max-width: 900px) {
-  .header__img {
+  .header__background-img {
     top: 0;
   }
 }
@@ -396,37 +423,28 @@ html {
   position: absolute;
   left: 0;
   top: 0;
-}
-
-.logo-img {
-  padding: 20px 40px;
-  background-color: #fff;
-  width: 150px;
-}
-
-.navigation-bar__list {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding-left: 220px;
   margin: 0;
 }
 
+.logo-img {
+  padding: 30px 30px;
+  background-color: #fff;
+  width: 200px;
+}
+
+.navigation-bar__list {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-left: 220px;
+}
+
 .navigation-bar__list-item {
-  text-decoration: none;
   text-transform: uppercase;
   font-size: 15px;
   padding: 27px 15px;
   font-weight: 600;
-  display: inline-block;
   position: relative;
-  text-align: center;
   color: #262626;
 }
 
@@ -456,4 +474,451 @@ html {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.orders {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 200px;
+          flex: 1 200px;
+}
+
+.orders-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.orders-nav__list {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.orders-nav__list-item {
+  margin: 5px;
+  padding: 5px 10px;
+  font-weight: 500;
+  -webkit-transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.orders-nav__list-item:hover {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.nav-item--active {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.orders__type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.group-header {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.group-header__heading {
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.orders__products-list {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.orders__list-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 31%;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .orders__list-product {
+    width: 45%;
+  }
+}
+
+.list-product__img {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.list-product__name {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 20px 0 20px 0;
+}
+
+.list-product__description {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #555353;
+}
+
+.list-product__order-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.list-product__price {
+  font-size: 25px;
+  color: red;
+  margin-bottom: 15px;
+}
+
+.btn-order {
+  outline: none;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px;
+  position: relative;
+  -webkit-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-order:hover {
+  background-color: #2c2c2c;
+}
+
+.btn-order__value-indicator {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: #fff;
+  padding: 4px 8px;
+  background-color: #979090;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.shopping-cart {
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 20px;
+}
+
+.restaurant-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.restaurant-info__heading {
+  text-transform: capitalize;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+}
+
+.restaurant-info__street {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.restaurant-info__account-indicator {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.restaurant-info__restaurant-status {
+  display: inline-block;
+  position: relative;
+  margin: 10px 0 0 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: green;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.restaurant-info__restaurant-status::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  background-color: green;
+}
+
+.restaurant-info__open-hours {
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 12px;
+  height: 0;
+  overflow: hidden;
+}
+
+.restaurant-info__more {
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.delivery__delivery-select {
+  padding: 5px 15px;
+  outline: none;
+  border: 1px solid #000;
+  display: inline-block;
+  font-weight: 400;
+}
+
+.delivery__delivery-option {
+  display: inline-block;
+}
+
+.delivery__adress {
+  margin-top: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delivery__adress i {
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+.order-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.order-box__heading {
+  font-weight: 500;
+}
+
+.order-box__empty {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order-box__empty-text {
+  color: #979090;
+  font-size: 14px;
+  text-align: center;
+}
+
+.order-box__btn {
+  margin: 10px 0;
+  padding: 15px 0;
+}
+
+.order-box__delivery-fee {
+  text-align: center;
+  font-size: 12px;
+}
+
+.order-box__list {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.order-box__list-item {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.price-value__increment-decrement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.btn {
+  background-color: #fff;
+  border: 1px solid #000;
+  display: inline-block;
+  margin: 0;
+  -webkit-transition: color .25s ease-in-out, background-color .25s ease-in-out;
+  transition: color .25s ease-in-out, background-color .25s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #464646;
+  color: #fff;
+}
+
+.btn-decrement {
+  border-left: none;
+}
+
+.btn--tip {
+  padding: 8px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 1px solid #bebebe;
+}
+
+.btn--tip-active {
+  border: 1px solid #000;
+}
+
+.order-box__summary-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 15px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.summary-box--tip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.order-box__summary-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.arrow {
+  font-weight: 500;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+.open-hours--active {
+  height: 20px;
+}
+
+.modal-body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.822);
+  z-index: 100000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.lightbox_buy-product {
+  height: 50%;
+  -ms-flex-preferred-size: 600px;
+      flex-basis: 600px;
+  background-color: blue;
+  margin: auto;
 }

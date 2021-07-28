@@ -13,9 +13,10 @@ html {
     z-index: 111;
     position: relative;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 
-.header__img {
+.header__background-img {
     width: 100%;
     height: auto;
     position: absolute;
@@ -47,32 +48,27 @@ html {
     position: absolute;
     left: 0;
     top: 0;
-}
-
-.logo-img {
-  padding: 20px 40px;
-  background-color: #fff;
-  width: 150px;
-}
-
-.navigation-bar__list {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    padding-left: 220px;
     margin: 0;
 }
 
+.logo-img {
+  padding: 30px 30px;
+  background-color: #fff;
+  width: 200px;
+}
+
+.navigation-bar__list {
+    justify-content: flex-end;
+    padding-left: 220px;
+}
+
 .navigation-bar__list-item {
-    text-decoration: none;
+    
     text-transform: uppercase;
     font-size: 15px;
     padding: 27px 15px;
     font-weight: 600;
-    display: inline-block;
     position: relative;
-    text-align: center;
     color: #262626;
 
     &::before {

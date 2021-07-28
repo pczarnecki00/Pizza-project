@@ -1,0 +1,21 @@
+.modal-body {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.822);
+    z-index :100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.lightbox_buy-product {
+    height: 50%;
+    flex-basis: 600px;
+    background-color: blue;
+    margin:auto;
+}

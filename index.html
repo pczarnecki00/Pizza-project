@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -17,22 +19,426 @@
         <div class="wrapper">
             <nav class="navigation-bar max-width">
 
-                <h1 class="navigation-bar__logo"><a href="" class="logo-link"><img src="img/logo.png" class="logo-img" alt="Little Italy Pizza"></a></h1>
-                <ul class="navigation-bar__list">
-        
+                <h1 class="navigation-bar__logo"><a href="" class="logo-link"><img src="img/logo.png" class="logo-img"
+                            alt="Little Italy Pizza"></a></h1>
 
-                    <li><a href="" class="navigation-bar__list-item ">home</a></li>
-                    <li><a href="" class="navigation-bar__list-item">about us</a></li>
-                    <li><a href="" class="navigation-bar__list-item">gallery</a></li>
-                    <li><a href="" class="navigation-bar__list-item">table booking</a></li>
-                    <li><a href="" class="navigation-bar__list-item  list-item--active">menu / order online</a></li>
-                    <li><a href="" class="navigation-bar__list-item">contact</a></li>
+                <ul class="navigation-bar__list list--style">
+                    <li><a href="" class="navigation-bar__list-item link--style ">home</a></li>
+                    <li><a href="" class="navigation-bar__list-item link--style">about us</a></li>
+                    <li><a href="" class="navigation-bar__list-item link--style">gallery</a></li>
+                    <li><a href="" class="navigation-bar__list-item link--style">table booking</a></li>
+                    <li><a href="" class="navigation-bar__list-item link--style list-item--active">menu / order
+                            online</a></li>
+                    <li><a href="" class="navigation-bar__list-item link--style">contact</a></li>
+
                 </ul>
             </nav>
         </div>
-        <img src="img/background.jpg" alt="background" class="header__img">
+
+        <img src="img/background.jpg" alt="background" class="header__background-img">
+
     </header>
-    <main class="content max-width"></main>
+    <main class="content max-width">
+        <section class="orders">
+
+            <nav class="orders-nav">
+                <ul class="orders-nav__list list--style">
+                    <li><a href="" class="orders-nav__list-item nav-item--active link--style">Pizza</a></li>
+                    <li><a href="" class="orders-nav__list-item link--style">Main dishes</a></li>
+                    <li><a href="" class="orders-nav__list-item link--style">Salads</a></li>
+                    <li><a href="" class="orders-nav__list-item link--style">Desserts</a></li>
+                    <li><a href="" class="orders-nav__list-item link--style">Beverages</a></li>
+                </ul>
+            </nav>
+            <article class="orders__type">
+                <header class="orders__group group-header">
+                    <img class="groupe-header__img" src="img/logo-pizza.jpg" alt="Pizza header image">
+                    <h2 class="group-header__heading">Pizza</h2>
+                </header>
+                <ul class="orders__products-list list--style">
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/pizza-margherita.jpg" alt="Margerita">
+                        <h3 class="list-product__name">Margherita</h3>
+                        <span title="cheese" class="list-product__description">cheese</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$18.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/pizza-sausage.jpg" alt="Pepperoni">
+                        <h3 class="list-product__name">Pepperoni</h3>
+                        <span title="cheese, pepperoni" class="list-product__description">cheese, pepperoni</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$20.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/pizza-capricosa.jpg" alt="Capriciosa">
+                        <h3 class="list-product__name">Capriciosa</h3>
+                        <span title="cheese, ham, mushrooms" class="list-product__description">cheese, ham,
+                            mushrooms</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$22.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/pizza-margherita.jpg" alt="Neopolitana">
+                        <h3 class="list-product__name">Neopolitana</h3>
+                        <span title="cheese, salami, olives,tomatoes" class="list-product__description">cheese, salami,
+                            olives,tomatoes</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$24.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/pizza-mozzarella.jpg" alt="Mozzarella">
+                        <h3 class="list-product__name">Mozzarella</h3>
+                        <span title="mozzarella cheese" class="list-product__description">mozzarella cheese</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$26.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/pizza-margherita.jpg" alt="Regina">
+                        <h3 class="list-product__name">Regina</h3>
+                        <span title="mozzarella cheese, tomatoes" class="list-product__description">mozzarella cheese,
+                            tomatoes</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$29.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="orders__type">
+                <header class="orders__group group-header">
+                    <img src="img/main-dishes.jpg" alt="Main dishes header image">
+                    <h2 class="group-header__heading">main dishes</h2>
+                </header>
+                <ul class="orders__products-list list--style">
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/main-chicken-breast.jpg" alt="Chicken breasts">
+                        <h3 class="list-product__name">Chicken breast in spicy sauce</h3>
+                        <span title="" class="list-product__description"></span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$24.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/main-salmon.jpg" alt="salmon">
+                        <h3 class="list-product__name">Salmon with herbs and tomatoes</h3>
+                        <span title="" class="list-product__description"></span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$26.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/main-tenderloin-steak.jpg" alt="Tenderloin stek">
+                        <h3 class="list-product__name">Tenderloin stek</h3>
+                        <span title="" class="list-product__description"></span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$37.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="orders__type">
+                <header class="orders__group group-header">
+                    <img src="img/salads.jpg" alt="Salads imagea">
+                    <h2 class="group-header__heading">salads</h2>
+                </header>
+                <ul class="orders__products-list list--style">
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/salad-chicken.jpg" alt="Chicken salad">
+                        <h3 class="list-product__name">Chicken salad</h3>
+                        <span title="" class="list-product__description">200g</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$16.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/salad-lambs-lettuce.jpg" alt="lamb's lettuce salad">
+                        <h3 class="list-product__name">Lamb's lettuce salad</h3>
+                        <span title="" class="list-product__description">150g</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$14.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/salad-tomato.jpg" alt="salad with tomates">
+                        <h3 class="list-product__name">Salad with tomates</h3>
+                        <span title="" class="list-product__description">220g</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$15.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="orders__type">
+                <header class="orders__group group-header">
+                    <img src="img/desserts.jpg" alt="desserts image">
+                    <h2 class="group-header__heading">desserts</h2>
+                </header>
+                <ul class="orders__products-list list--style">
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/dessert-cake-with-chocolate-and-rasberry.jpg"
+                            alt="chocolate rasberry cake">
+                        <h3 class="list-product__name">Cake with chocolate and rasberry</h3>
+                        <span title="" class="list-product__description"></span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$8.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/dessert-pancakes.jpg" alt="pancakes with honey">
+                        <h3 class="list-product__name">Pancakes with honey</h3>
+                        <span title="" class="list-product__description"></span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$9.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/dessert-tiramisu.jpg" alt="Tiramisu">
+                        <h3 class="list-product__name">Tiramisu</h3>
+                        <span title="" class="list-product__description"></span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$7.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="orders__type">
+                <header class="orders__group group-header">
+                    <img src="img/beverages.jpg" alt="beverages image">
+                    <h2 class="group-header__heading">beverages</h2>
+                </header>
+                <ul class="orders__products-list list--style">
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/coca-cola.jpg" alt="coca-cola">
+                        <h3 class="list-product__name">Coca-Cola</h3>
+                        <span title="" class="list-product__description">0,2l</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$5.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/sprite_0_2.png" alt="sprite">
+                        <h3 class="list-product__name">Sprite</h3>
+                        <span title="" class="list-product__description">0,2l</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$5.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+
+                    <li class="orders__list-product">
+
+                        <img class="list-product__img" src="img/water.png" alt="Water">
+                        <h3 class="list-product__name">Water</h3>
+                        <span title="" class="list-product__description">0,2l</span>
+
+                        <div class="list-product__order-box">
+                            <span class="list-product__price">$5.00</span>
+                            <button class="list-product__btn btn-order">order now<span
+                                    class="btn-order__value-indicator">2</span></button>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="shopping-cart">
+
+            <div class="restaurant-info">
+                <h3 class="restaurant-info__heading">little italy</h3>
+                <span class="restaurant-info__street">wall st 57</span>
+                <span class="restaurant-info__account-indicator account-indicator--active">Account <span
+                        class="arrow">&#709;</span></span>
+                <span class="restaurant-info__restaurant-status">Order for future <span
+                        class="arrow">&#709;</span></span>
+                <span class="restaurant-info__open-hours open-hours--active">Mon - Sun 10:00 - 22:00</span>
+                <span class="restaurant-info__more">more</span>
+            </div>
+
+            <div class="delivery">
+                <select class="delivery__delivery-select" name="delivery" id="delivery">
+                    <option class="delivery__delivery-option" value="delivery">Delivery</option>
+                    <option class="delivery__delivery-option" value="pickup">Pickup</option>
+                </select>
+                <span class="delivery__adress"><i class="fas fa-map-marker-alt"></i>Enter delivery address</span>
+            </div>
+
+            <div class="order-box">
+                <h4 class="order-box__heading">Your Order</h4>
+                <div class="order-box__empty">
+                    <img class="order-box__empty-img" src="img/cart.png" alt="cart">
+                    <span class="order-box__empty-text">Cart is empty. Add menu items.</span>
+                </div>
+                <ul class="order-box__list  list--style">
+                    <li class="order-box__list-item">
+                        <div class="list-item__name-box"><span class="list-item__number">1</span> x <span
+                                class="list-item__name">Margerita</span></div>
+
+                        <div class="list-item__price-value">
+                            <span class="price-value__price">$19.00</span>
+                            <div class="price-value__increment-decrement">
+                                <button class="btn btn--increment">+</button>
+                                <button class="btn btn--decrement">-</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="order-box__list-item">
+                        <div class="list-item__name-box"><span class="list-item__number">1</span> x <span
+                                class="list-item__name">Margerita</span></div>
+
+                        <div class="list-item__price-value">
+                            <span class="price-value__price">$19.00</span>
+                            <div class="price-value__increment-decrement">
+                                <button class="btn btn--increment">+</button>
+                                <button class="btn btn--decrement">-</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="order-box__list-item">
+                        <div class="list-item__name-box"><span class="list-item__number">1</span> x <span
+                                class="list-item__name">Margerita</span></div>
+
+                        <div class="list-item__price-value">
+                            <span class="price-value__price">$19.00</span>
+                            <div class="price-value__increment-decrement">
+                                <button class="btn btn--increment">+</button>
+                                <button class="btn btn--decrement">-</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="order-box__list-item">
+                        <div class="list-item__name-box"><span class="list-item__number">1</span> x <span
+                                class="list-item__name">Margerita</span></div>
+
+                        <div class="list-item__price-value">
+                            <span class="price-value__price">$19.00</span>
+                            <div class="price-value__increment-decrement">
+                                <button class="btn btn--increment">+</button>
+                                <button class="btn btn--decrement">-</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="order-box__summary">
+                    <div class="order-box__summary-box">
+                        <span class="order-box__summary-text">Delivery</span><span
+                            class="order-box__summary-text">FREE</span>
+                    </div>
+                    <div class=" summary-box--tip">
+                        <div class="order-box__summary-box">
+                            <span class="text">Tip</span><span class="text text--tip">$0.00</span>
+                        </div>
+                        <div class="order-box__summary-btns">
+                            <button class="btn btn--tip btn--tip-active">0%</button><button class="btn btn--tip">10%</button><button class="btn btn--tip">20%</button><button class="btn btn--tip">OTHER</button>
+                        </div>
+                    </div>
+                    <div class="order-box__summary-box">
+                        <span class="text">Total</span><span class="text text-total">$0.00</span>
+                    </div>
+                </div>
+
+                <button class="order-box__btn btn-order">Go to checkout &#10095;</button>
+                <span class="order-box__delivery-fee"> Min order $0.00</span>
+            </div>
+
+        </section>
+
+        <div class="modal-body">
+            <div class="lightbox_buy-product">
+
+            </div>
+
+        </div>
+    </main>
 </body>
 
 </html>

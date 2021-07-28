@@ -1,0 +1,325 @@
+.content {
+    display: flex;
+}
+
+.orders {
+    flex: 1 200px;
+}
+.orders-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.orders-nav__list {
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.orders-nav__list-item {
+    margin: 5px;
+    padding: 5px 10px;
+    font-weight: 500;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
+
+    &:hover {
+        background-color: rgb(44, 44, 44);
+        color: #fff;
+    }
+}
+
+.nav-item--active {
+    background-color: rgb(44, 44, 44);
+    color: #fff;
+}
+
+.orders__type {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.group-header {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.group-header__heading {
+    font-size: 38px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.orders__products-list {
+    justify-content: space-between;
+}
+
+.orders__list-product {
+    display: flex;
+    flex-direction: column;
+    width: 31%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    justify-content: space-between;
+    @media (max-width: 1000px) {
+        width: 45%;
+    }
+}
+
+.list-product__img {
+    width: 100%;
+    padding: 0 30px;
+}
+
+.list-product__name {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 20px 0 20px 0;
+}
+
+.list-product__description {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: rgb(85, 83, 83);
+}
+
+.list-product__order-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.list-product__price {
+    font-size: 25px;
+    color: rgb(255, 0, 0);
+    margin-bottom: 15px;
+}
+
+.btn-order {
+    outline: none;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px;
+    position: relative;
+    transition: background-color 0.15s ease-in-out;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(44, 44, 44);
+    }
+}
+
+.btn-order__value-indicator {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #fff;
+    padding: 4px 8px;
+    background-color: rgb(151, 144, 144);
+    border-radius: 5px;
+    font-size: 12px;
+}
+.shopping-cart {
+    flex-basis: 300px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.restaurant-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 40px;
+
+    &__heading {
+        text-transform: capitalize;
+        font-weight: 500;
+        margin: 0 0 5px 0;
+    }
+
+    &__street {
+        text-transform: capitalize;
+        font-size: 14px;
+    }
+
+    &__account-indicator {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    &__restaurant-status {
+        display: inline-block;
+        position: relative;
+        margin: 10px 0 0 0;
+        padding-left: 20px;
+        font-size: 14px;
+        color: green;
+        margin-left: 5px;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 13px;
+            width: 13px;
+            border-radius: 100%;
+            background-color: green;
+        }
+    }
+
+    &__open-hours {
+        display: inline-block;
+        margin: 10px 0;
+        font-size: 12px;
+        height: 0;
+        overflow: hidden;
+    }
+
+    &__more {
+        font-size: 12px;
+        cursor: pointer;
+        text-transform: capitalize;
+    }
+}
+
+.delivery {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &__delivery-select {
+        padding: 5px 15px;
+        outline: none;
+        border: 1px solid #000;
+        display: inline-block;
+        font-weight: 400;
+    }
+
+    &__delivery-option {
+        display: inline-block;
+    }
+}
+
+.delivery__adress {
+    margin-top: 10px;
+    font-size: 12px;
+    cursor: pointer;
+
+    i {
+        font-size: 11px;
+        margin-right: 5px;
+    }
+}
+
+.order-box {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    &__heading {
+        font-weight: 500;
+    }
+
+    &__empty {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__empty-text {
+        color: rgb(151, 144, 144);
+        font-size: 14px;
+        text-align: center;
+    }
+
+    &__btn {
+        margin: 10px 0;
+        padding: 15px 0;
+    }
+
+    &__delivery-fee {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    &__list {
+        border-top: 1px solid rgb(128, 128, 128);
+        border-bottom: 1px solid rgb(128, 128, 128);
+        flex-direction: column;
+    }
+
+    &__list-item {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.price-value__increment-decrement {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    background-color: #fff;
+    border: 1px solid #000;
+    display: inline-block;
+    margin: 0;
+    transition: color .25s ease-in-out, background-color .25s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(70, 70, 70);
+        color: #fff;
+    }
+}
+.btn-decrement {
+    border-left: none;
+}
+
+.btn--tip {
+    padding: 8px 0;
+    flex: 1;
+    border: 1px solid rgb(190, 190, 190);
+}
+.btn--tip-active{
+    border: 1px solid #000;
+}
+.order-box__summary-box {
+    display: flex;
+    padding-top: 15px;
+    justify-content: space-between;
+}
+
+.summary-box--tip{
+display: flex;
+flex-direction: column;
+}
+.order-box__summary-btns {
+    display: flex;
+}
+.arrow {
+    font-weight: 500;
+    display: inline-block;
+    transition: transform 0.25s ease-in-out;
+}
+.open-hours--active {
+    height: 20px;
+}
