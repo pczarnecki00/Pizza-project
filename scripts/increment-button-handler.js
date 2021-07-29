@@ -28,7 +28,9 @@ const orderHandler = (el) => {
                          <button data-id="${el.dataset.id}" class="btn btn--decrement">-</button>
                      </div>
                  </div>`
-        , el.querySelector('.btn-order__value-indicator').innerHTML = dish.value, pizzaItem.querySelector('.btn--decrement').addEventListener('click', function(){decrement(this)}))
+        , el.querySelector('.btn-order__value-indicator').innerHTML = dish.value, 
+        pizzaItem.querySelector('.btn--decrement').addEventListener('click', function(){decrement(this)}
+        ))
         document.querySelector('.order-box__list').appendChild(pizzaItem);
         document.querySelectorAll('.btn-order__value-indicator').forEach(element => !element.innerHTML  ? (element.style = "opacity: 0") : (element.style = "opacity: 1"))
         
@@ -36,7 +38,7 @@ const orderHandler = (el) => {
     
 }
 
-
+515695
 
 orderBtn.forEach(element => {
     element.addEventListener('click', function (event) {
