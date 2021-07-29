@@ -635,6 +635,7 @@ html {
   background-color: #979090;
   border-radius: 5px;
   font-size: 12px;
+  opacity: 0;
 }
 
 .shopping-cart {
@@ -660,6 +661,9 @@ html {
           flex-direction: column;
   position: relative;
   margin-bottom: 40px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .restaurant-info__heading {
@@ -709,6 +713,8 @@ html {
   font-size: 12px;
   height: 0;
   overflow: hidden;
+  -webkit-transition: height .25s ease-in-out;
+  transition: height .25s ease-in-out;
 }
 
 .restaurant-info__more {
@@ -726,6 +732,9 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 30px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .delivery__delivery-select {
@@ -734,6 +743,7 @@ html {
   border: 1px solid #000;
   display: inline-block;
   font-weight: 400;
+  width: 100%;
 }
 
 .delivery__delivery-option {
@@ -813,6 +823,10 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.list-item__name {
+  text-transform: capitalize;
 }
 
 .price-value__increment-decrement {
