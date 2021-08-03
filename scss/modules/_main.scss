@@ -1,9 +1,15 @@
 .content {
     display: flex;
+    @media (max-width: 760px) {
+        flex-direction: column;
+    }
 }
 
 .orders {
     flex: 1 200px;
+    @media (max-width: 760px) {
+        flex-basis: 100%;
+    }
 }
 .orders-nav {
     position: sticky;
@@ -55,6 +61,7 @@
 
 .orders__products-list {
     justify-content: space-between;
+    
 }
 
 .orders__list-product {
@@ -135,6 +142,9 @@
     display: flex;
     flex-direction: column;
     padding-left: 20px;
+    @media (max-width: 760px) {
+        display: none;
+    }
 }
 
 .restaurant-info {
@@ -191,13 +201,16 @@
         font-size: 12px;
         height: 0;
         overflow: hidden;
-        transition: height .25s ease-in-out
+        transition: height 0.25s ease-in-out;
     }
 
     &__more {
         font-size: 12px;
         cursor: pointer;
         text-transform: capitalize;
+    }
+    @media (max-width: 760px) {
+        display: none;
     }
 }
 
@@ -219,9 +232,10 @@
     &__delivery-option {
         display: inline-block;
         position: relative;
-
     }
-    
+    @media (max-width: 760px) {
+        display: none;
+    }
 }
 
 .delivery__adress {
@@ -242,8 +256,10 @@
     top: 0;
     left: 0;
 
+
     &__heading {
         font-weight: 500;
+       
     }
 
     &__empty {
@@ -273,7 +289,6 @@
         border-bottom: 1px solid rgb(128, 128, 128);
         flex-direction: column;
         display: flex;
-    
     }
 
     &__list-item {
@@ -285,9 +300,12 @@
         display: none;
     }
 }
+
+
 .list-item__name {
     text-transform: capitalize;
 }
+
 .price-value__increment-decrement {
     display: flex;
     justify-content: flex-end;
@@ -298,7 +316,7 @@
     border: 1px solid #000;
     display: inline-block;
     margin: 0;
-    transition: color .25s ease-in-out, background-color .25s ease-in-out;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
     cursor: pointer;
 
     &:hover {
@@ -316,7 +334,7 @@
     flex: 1;
     border: 1px solid rgb(190, 190, 190);
 }
-.btn--tip-active{
+.btn--tip-active {
     border: 1px solid #000;
 }
 .order-box__summary-box {
@@ -324,21 +342,41 @@
     padding-top: 15px;
     justify-content: space-between;
 }
+
 .template {
-    display:none;
+    display: none;
 }
-.summary-box--tip{
-display: flex;
-flex-direction: column;
+
+.summary-box--tip {
+    display: flex;
+    flex-direction: column;
 }
+
 .order-box__summary-btns {
     display: flex;
 }
+
 .arrow {
     font-weight: 500;
     display: inline-block;
     transition: transform 0.25s ease-in-out;
 }
+
 .open-hours--active {
     height: 20px;
+}
+
+.low-width {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 5000;
+    @media (max-width: 760px) {
+        display: flex;
+    }
 }

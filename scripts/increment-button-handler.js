@@ -33,34 +33,56 @@ import { dishes } from './pizzas.js';
         state.list.forEach(item => {
             totalPrice += item.count * item.price
         })
+ 
         const tipValue = document.querySelector('.btn--tip-active').innerHTML.slice(0,-1)
-        document.querySelector('.text--tip'). innerHTML = `$${((tipValue/100) * totalPrice).toFixed(2)}`;
-        document.querySelector('.text-total').innerHTML = `$${(totalPrice + ((tipValue/100) * totalPrice)).toFixed(2)}`
         
-        
+        document.querySelectorAll('.text--tip').forEach(item => item.innerHTML = `$${((tipValue/100) * totalPrice).toFixed(2)}`)
+        document.querySelectorAll('.text-total').forEach(item => item.innerHTML = `$${(totalPrice + ((tipValue/100) * totalPrice)).toFixed(2)}`)
         
     }
 
     const clearList = () => {
         const cartList = document.querySelector('.order-box__list');
+        const modalCartList = document.querySelector('.modal-form__cart-list');
 
         while (cartList.firstChild) {
             cartList.removeChild(cartList.firstChild);
         }
+ 
+        while (modalCartList.firstChild) {
+            modalCartList.removeChild(modalCartList.firstChild);
+        }
+
 
     }
 
+    const cartsDisplayToggler = () => {
+        const emptyCartImg = document.querySelectorAll('.order-box__empty')
+        const cartUlDisplay = document.querySelectorAll('.order-box__display-style')
 
-    const indicatorValue = (id) => {
+        emptyCartImg.forEach( item => state.list.length <= 0
+            ? item.style = 'display: flex;'
+            : item.style = 'display: none;')
+
+            cartUlDisplay.forEach(item => state.list.length <= 0
+                ? item.style = 'display:none;'
+                : item.style = 'display:block;')
+    
+    }
+
+    const orderBtnIndicatorValue = (id) => {
     let indicator  = 0;
      state.list.forEach ( item => id.dataset.id === item.name && (indicator = item.count));
      document.querySelectorAll('.btn-order__value-indicator').forEach(item => id.dataset.id === item.dataset.id &&(item.innerHTML = indicator))
      document.querySelectorAll('.btn-order__value-indicator').forEach(item => +item.innerHTML < 1 ? item.style = 'opacity: 0': item.style = 'opacity:1')
      
     }
+
+
     const cartListRender = (list) => {
         clearList();
         const cartList = document.querySelector('.order-box__list');
+        const modalCartList = document.querySelector('.modal-form__cart-list')
 
         list.forEach(pizza => {
             let itemPizza = document.createElement('li');
@@ -79,13 +101,32 @@ import { dishes } from './pizzas.js';
             cartList.appendChild(itemPizza)
 
         })
+        list.forEach(pizza => {
+            let itemPizza = document.createElement('li');
+            itemPizza.classList.add('order-box__list-item');
+            itemPizza.innerHTML = `<div class="list-item__name-box"><span class="list-item__number">${pizza.count}</span> x <span
+                            class="list-item__name">${pizza.name}</span></div>
+    
+                    <div class="list-item__price-value">
+                         <span class="price-value__price">$${(pizza.price * pizza.count).toFixed(2)}</span>
+                          <div class="price-value__increment-decrement">
+                              <button data-id="${pizza.name}" class="btn btn--increment">+</button>
+                             <button data-id="${pizza.name}" class="btn btn--decrement">-</button>
+                         </div>
+                     </div>`;
+
+            modalCartList.appendChild(itemPizza)
+
+        })
 
     }
 
     const clickHandler = (id) => {
         id.classList.contains('btn--increment') && incremenet(id) || id.classList.contains('btn--decrement') && decrement(id);
-        
+        id.classList.contains('list-product__img') && modalOppener(id);
+        orderBtnIndicatorValue(id);
         totalPrice();
+        cartsDisplayToggler();
 
     }
     
@@ -96,23 +137,31 @@ import { dishes } from './pizzas.js';
             : [...state.list, { name: dishes[x.dataset.id].name, price: dishes[x.dataset.id].price, count: y}]
             state.list = cartList
             cartListRender(cartList)
-            indicatorValue(x);
-            modalCloser()
+            orderBtnIndicatorValue(x);
+            modalCloser();
     }
+
+
     const modalHandler = (x) => {
         const modalCount = document.querySelector('.modal__count')
         x.classList.contains('modal__decrement') && (+modalCount.value >= 1) && (modalCount.value = +modalCount.value - 1 );
         x.classList.contains('modal__increment') && (modalCount.value = +modalCount.value + 1 );
         x.classList.contains('modal_btn-to-cart') && modalAddToCart(x, +modalCount.value);
-                    
+        x.classList.contains('modal__close') && modalCloser();
         document.querySelector('.modal__pizza-price').innerHTML = `$${(+modalCount.value * dishes[modalCount.dataset.id].price).toFixed(2)}`;
-        
+        cartsDisplayToggler();
+        totalPrice();
 
      
     }
+
     const modalCloser = () => {
         document.querySelector('.modal').style = 'height:0; opacity:0 ;';
         document.body.style = 'overflow: auto;'
+    }
+
+    const checkedRadioStyle = () => {
+        document.querySelectorAll('.modal-form__radio').forEach( item => item.checked && (item.parentElement.style = 'border-color: #000'))
     }
 
     const modalOppener = (id) => {
@@ -129,7 +178,7 @@ import { dishes } from './pizzas.js';
             </div>
             <div class="modal__description">
                 <h2 class="modal__pizza-name">${dishes[id.dataset.id].name}</h2>
-                <span class="modal_pizza-ingridienets">${dishes[id.dataset.id]?.details}</span>
+                <span class="modal_pizza-ingridienets">${dishes[id.dataset.id].details == undefined? '' : dishes[id.dataset.id].details}</span>
             </div>
             <div class="modal__btn-panel">
                 <div class="modal__count-box">
@@ -148,29 +197,33 @@ import { dishes } from './pizzas.js';
         document.querySelector('.modal-form').style = 'height: 100vh; opacity: 1; overflow:scroll;';
         document.body.style = 'overflow:hidden;'
     }
+
     const closeModalForm =()=>{
         document.querySelector('.modal-form').style = 'height: 0; opacity: 0; overflow:hidden;'
         document.body.style = 'overflow:auto;'
     }
+
     initApp();
+    checkedRadioStyle()
 
-    document.querySelector('.content').addEventListener('click', function (e) {
-        
-        clickHandler(e.target);
-        indicatorValue(e.target);
-        e.target.classList.contains('btn-modal') && modalHandler(e.target)
-        e.target.classList.contains('modal__close') && modalCloser();
-        e.target.classList.contains('list-product__img') && modalOppener(e.target);
-        e.target.classList.contains('modal-cross') && closeModalForm();
-        e.target.classList.contains('order-box__btn') && openModalForm();
-
-        state.list.length <= 0 
-            ? (document.querySelector('.order-box__empty').style = 'display: flex;', document.querySelector('.order-box__display-style').style = 'display:none;')
-            : (document.querySelector('.order-box__empty').style = 'display: none;', document.querySelector('.order-box__display-style').style = 'display:block;')
-            
-       
+    document.querySelector('.orders').addEventListener('click', function (e) {
+        clickHandler(e.target); 
     });
 
+    document.querySelectorAll('.order-box__list ').forEach( item => item.addEventListener('click', function(e){
+        clickHandler(e.target);
+    }))
+
+    document.querySelector('.modal__pizza-order').addEventListener('click' , function(e){ 
+        clickHandler(e.target);
+        modalHandler(e.target);
+
+    })
+
+    document.querySelectorAll('.order-box__summary-btns').forEach(item => item.addEventListener('click', totalPrice))
+    document.querySelector('.modal-cross').addEventListener('click', closeModalForm)
+    document.querySelectorAll('.order-box__btn').forEach(item => item.addEventListener('click', openModalForm))
+   
     
     
 })(document.state);
